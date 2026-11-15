@@ -222,7 +222,7 @@ unset($_SESSION['staff_msg']);
                         </div>
                         <div class="form-group">
                             <label>Status</label>
-                            <input type="text" class="form-control" value="<?php echo $is_passed ? 'SELESAI (LEPAS)' : 'AKTIF (AKAN DATANG)'; ?>" readonly>
+                            <input type="text" class="form-control" value="<?php echo $is_passed ? 'SELESAI' : 'AKTIF (AKAN DATANG)'; ?>" readonly>
                         </div>
                         <div class="form-group">
                             <label>Tempat</label>

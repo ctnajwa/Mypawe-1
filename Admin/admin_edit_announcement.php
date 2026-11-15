@@ -67,7 +67,8 @@ if (!$announcement) {
         .form-group label { display: block; font-weight: 700; color: #2d3748; margin-bottom: 6px; font-size: 14px; }
         .form-control { width: 100%; padding: 11px 14px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 15px; outline: none; box-sizing: border-box; }
         .form-control:focus { border-color: #026aa7; }
-        .btn-submit { background-color: #0080ff; color: #fff; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; float: right; margin-top: 15px; }
+        .form-actions { display: flex; justify-content: flex-end; margin-top: 15px; }
+        .btn-submit { background-color: #0080ff; color: #fff; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; }
         .btn-submit:hover { background-color: #006dd9; }
     </style>
 </head>
@@ -76,13 +77,49 @@ if (!$announcement) {
         <aside class="sidebar">
             <div class="sidebar-brand">
                 <div class="brand-logo-placeholder">
-                    <img src="../Images/logo_pawe_pekan.jpg" alt="Logo PAWE Pekan" onerror="this.src='https://via.placeholder.com/140x60?text=PAWE+Pekan'"/>
+                    <img src="../Images/logo_pawe_pekan.jpg" alt="Logo PAWE Pekan" class="logo-placeholder" onerror="this.src='https://via.placeholder.com/140x60?text=PAWE+Pekan'"/>
                 </div>
             </div>
             <ul class="sidebar-menu">
                 <li class="menu-item"><a href="admin_dashboard.php" class="menu-link">Dashboard</a></li>
-                <li class="menu-item"><a href="admin_view_class.php" class="menu-link">Kelas & Program</a></li>
-                <li class="menu-item active"><a href="admin_announcement.php" class="menu-link">Pengumuman</a></li>
+                <li class="menu-item has-dropdown" id="menuProfil">
+                    <div class="menu-link" onclick="toggleMenu('menuProfil', 'subProfil', 'arrowProfil')">
+                        <div class="menu-content">
+                            <span>Pengurusan Profil</span>
+                            <span id="arrowProfil" style="font-size: 12px;">&#9662;</span>
+                        </div>
+                    </div>
+                    <ul class="sub-menu" id="subProfil">
+                        <li><a href="admin_personal_profile.php">Profil Peribadi</a></li>
+                        <li><a href="admin_view_staff.php">Profil Staf</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item has-dropdown" id="menuAhli">
+                    <div class="menu-link" onclick="toggleMenu('menuAhli', 'subAhli', 'arrowAhli')">
+                        <div class="menu-content">
+                            <span>Pengurusan Ahli</span>
+                            <span id="arrowAhli" style="font-size: 12px;">&#9662;</span>
+                        </div>
+                    </div>
+                    <ul class="sub-menu" id="subAhli">
+                        <li><a href="admin_view_registration.php">Pendaftaran Ahli</a></li>
+                        <li><a href="admin_view_member.php">Profil Ahli</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item active"><a href="admin_view_class.php" class="menu-link">Kelas & Program</a></li>
+                <li class="menu-item"><a href="admin_announcement.php" class="menu-link">Pengumuman</a></li>
+                <li class="menu-item has-dropdown" id="menuKehadiran">
+                    <div class="menu-link" onclick="toggleMenu('menuKehadiran', 'subKehadiran', 'arrowKehadiran')">
+                        <div class="menu-content">
+                            <span>Kehadiran Ahli</span>
+                            <span id="arrowKehadiran" style="font-size: 12px;">&#9662;</span>
+                        </div>
+                    </div>
+                    <ul class="sub-menu" id="subKehadiran">
+                        <li><a href="admin_daily_attendance.php">Kehadiran Hari Ini</a></li>
+                        <li><a href="admin_attendance_log.php">Log Kehadiran</a></li>
+                    </ul>
+                </li>
                 <li class="menu-item"><a href="admin_report.php" class="menu-link">Laporan</a></li>
             </ul>
             <div class="sidebar-footer"><a href="../logout.php" class="btn-log-keluar">LOG KELUAR</a></div>
@@ -121,7 +158,7 @@ if (!$announcement) {
                             <label>Kandungan Pengumuman</label>
                             <textarea class="form-control" name="announcement_info" rows="5" required><?php echo htmlspecialchars($announcement['announcement_info']); ?></textarea>
                         </div>
-                        <div style="clear: both;">
+                        <div class="form-actions">
                             <button type="submit" class="btn-submit">Simpan Perubahan</button>
                         </div>
                     </form>

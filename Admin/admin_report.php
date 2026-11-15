@@ -316,7 +316,6 @@ $conn->close();
                     </div>
 
                     <div class="report-actions">
-                        <button type="button" class="btn-print" onclick="window.print();">Cetak Laporan</button>
                         <button type="button" class="btn-pdf" onclick="exportReportPdf();">Eksport PDF</button>
                     </div>
                 <?php endif; ?>
