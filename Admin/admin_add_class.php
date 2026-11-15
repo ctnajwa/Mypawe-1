@@ -65,7 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .form-group label { display: block; font-weight: 700; color: #2d3748; margin-bottom: 6px; font-size: 14px; }
         .form-control { width: 100%; padding: 11px 14px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 15px; outline: none; box-sizing: border-box; }
         .form-control:focus { border-color: #026aa7; box-shadow: 0 0 0 3px rgba(2, 106, 167, 0.15); }
-        .btn-submit { background-color: #0080ff; color: #fff; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; float: right; margin-top: 15px; }
+        .form-actions { display: flex; justify-content: flex-end; margin-top: 15px; }
+        .btn-submit { background-color: #0080ff; color: #fff; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; }
         .btn-submit:hover { background-color: #006dd9; }
     </style>
 </head>
@@ -171,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label>Muat Naik Surat Pengesahan*</label>
                             <input type="file" class="form-control" name="class_letter" accept=".pdf,.jpg,.png">
                         </div>
-                        <div style="clear: both;">
+                        <div class="form-actions">
                             <button type="submit" class="btn-submit">Tambah Program</button>
                         </div>
                     </form>

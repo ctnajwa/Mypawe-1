@@ -65,7 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .form-group label { display: block; font-weight: 700; color: #2d3748; margin-bottom: 6px; font-size: 14px; }
         .form-control { width: 100%; padding: 11px 14px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 15px; outline: none; background: #f7fafc; box-sizing: border-box; }
         .form-control:focus { background: #fff; border-color: #026aa7; }
-        .btn-submit { background-color: #026aa7; color: #fff; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; float: right; margin-top: 15px; }
+        .form-actions { display: flex; justify-content: flex-end; margin-top: 15px; }
+        .btn-submit { background-color: #026aa7; color: #fff; border: none; padding: 12px 30px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; }
         .btn-submit:hover { background-color: #014c78; }
     </style>
 </head>
@@ -157,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label>Surat / Dokumen Rujukan (PDF/Gambar)</label>
                             <input type="file" name="class_letter" class="form-control" style="background:#fff;">
                         </div>
-                        <div style="clear: both;">
+                        <div class="form-actions">
                             <button type="submit" class="btn-submit">Simpan Program</button>
                         </div>
                     </form>
