@@ -1,0 +1,115 @@
+/* Announcement Master Container */
+.ann-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Styled Action Trigger Forms (Image 2 and Image 3 boxes) */
+.ann-form-card {
+    background: #ffffff;
+    border: 2px solid #6495ed;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.ann-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #777777;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+/* Replicating the distinct alert boxes from Image 1 */
+.ann-alert-box {
+    background-color: #fef08a; /* Bright pastel yellow base */
+    border: 2px solid #ca8a04; /* Ochre-gold border line */
+    border-radius: 20px;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Exclamation circle warning emblem style */
+.ann-icon-emblem {
+    width: 40px;
+    height: 40px;
+    background-color: #000000;
+    color: #fef08a;
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.ann-text-content {
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.4;
+    padding-right: 140px; /* Leave space so text never overlaps buttons */
+}
+
+/* Mini Action Control Button Layout Group */
+.ann-btn-group {
+    position: absolute;
+    right: 25px;
+    display: flex;
+    gap: 8px;
+}
+
+.btn-mini {
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-mini-edit { background-color: #7dd3fc; color: #0369a1; }
+.btn-mini-del { background-color: #fca5a5; color: #991b1b; }
+
+/* Dynamic Interface Interaction Action Triggers */
+.btn-tambah-trigger {
+    background-color: #026aa7;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    float: right;
+    margin-bottom: 25px;
+}
+
+.btn-hantar-action {
+    background-color: #0091ff;
+    color: #ffffff;
+    padding: 10px 45px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}

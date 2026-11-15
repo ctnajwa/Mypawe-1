@@ -1,0 +1,161 @@
+
+:root {
+    --bg-navy: #0d4669;
+    --btn-blue: #113f8c;
+    --btn-blue-hover: #0d2f6a;
+    --text-dark: #1a202c;
+    --border-gray: #cbd5e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-navy);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+}
+
+.forgot-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 12px;
+    padding: 45px 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.forgot-logo {
+    width: 75px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.forgot-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.forgot-subtitle {
+    font-size: 15px;
+    color: #4a5568;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.forgot-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--btn-blue);
+    box-shadow: 0 0 0 3px rgba(17, 63, 140, 0.15);
+}
+
+.helper-link {
+    font-size: 14px;
+    color: #113f8c;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.helper-link:hover {
+    color: #0d2f6a;
+}
+
+.alert-error {
+    background-color: #fed7d7;
+    color: #9b2c2c;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #feb2b2;
+    text-align: left;
+}
+
+.btn-primary-action {
+    display: block;
+    width: 100%;
+    background-color: var(--btn-blue);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 15px;
+}
+
+.btn-primary-action:hover {
+    background-color: var(--btn-blue-hover);
+    transform: translateY(-1px);
+}
+
+.back-link-wrap {
+    display: block;
+    margin-top: 25px;
+    color: #2d3748;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.back-link-wrap:hover {
+    color: var(--btn-blue);
+}
+
+/* Step Progress Indicator Bars */
+.step-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.indicator-bar {
+    width: 50px;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.indicator-bar.active {
+    background-color: var(--btn-blue);
+}

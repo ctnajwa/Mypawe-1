@@ -1,0 +1,249 @@
+
+:root {
+    --primary-blue: #0d1b4c;
+    --btn-teal: #13898f;
+    --btn-teal-hover: #0e6f74;
+    --bg-light: #f4f6f9;
+    --text-dark: #212529;
+    --border-gray: #cbd5e0;
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+.profile-container {
+    max-width: 900px;
+    margin: 40px auto 70px;
+    padding: 0 20px;
+}
+
+.profile-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+}
+
+.profile-heading {
+    color: var(--primary-blue);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.profile-action-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+.btn-kemaskini {
+    display: inline-block;
+    background-color: var(--btn-teal);
+    color: #ffffff;
+}
+
+.btn-kemaskini:hover {
+    background-color: var(--btn-teal-hover);
+}
+
+.profile-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+}
+
+.profile-detail {
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.profile-detail span,
+.profile-detail strong {
+    display: block;
+}
+
+.profile-detail span {
+    color: #718096;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.profile-detail strong {
+    color: #2d3748;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-detail-full {
+    grid-column: 1 / -1;
+}
+
+.photo-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #cbd5e0;
+}
+
+.photo-preview-box {
+    width: 130px;
+    height: 150px;
+    border-radius: 8px;
+    border: 2px dashed #a0aec0;
+    background-color: #f7fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.photo-preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-placeholder {
+    font-size: 13px;
+    color: #718096;
+    text-align: center;
+    padding: 10px;
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group-row {
+    margin-bottom: 20px;
+}
+
+.form-group-row label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--btn-teal);
+    box-shadow: 0 0 0 3px rgba(19, 137, 143, 0.15);
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.uppercase-input {
+    text-transform: uppercase;
+}
+
+.radio-group {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding-top: 6px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.helper-text {
+    font-size: 12px;
+    color: #718096;
+    margin-top: 5px;
+    display: block;
+}
+
+.section-subheading {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin: 25px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+}
+
+.btn-profile {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-batal-profile {
+    background-color: #e2e8f0;
+    color: #2d3748;
+}
+
+.btn-batal-profile:hover {
+    background-color: #cbd5e0;
+}
+
+.btn-simpan-profile {
+    background-color: var(--btn-teal);
+    color: #ffffff;
+}
+
+.btn-simpan-profile:hover {
+    background-color: var(--btn-teal-hover);
+}
+
+@media (max-width: 768px) {
+    .form-grid-2,
+    .profile-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-detail-full {
+        grid-column: auto;
+    }
+    .profile-card {
+        padding: 25px 20px;
+    }
+}

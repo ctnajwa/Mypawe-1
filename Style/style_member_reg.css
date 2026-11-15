@@ -1,0 +1,306 @@
+/* ============================================================
+   style_member_reg.css - Multi-step Wizard & Form Styling
+   ============================================================ */
+:root {
+    --primary-blue: #0d1b4c;
+    --accent-yellow: #ffc107;
+    --btn-teal: #13898f;
+    --btn-teal-hover: #0e6f74;
+    --bg-light: #f4f6f9;
+    --text-dark: #212529;
+    --border-gray: #cbd5e0;
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+.wizard-container {
+    max-width: 960px;
+    margin: 40px auto 70px;
+    padding: 0 20px;
+}
+
+/* Progress Tracker */
+.step-progressbar {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.step-progressbar::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background-color: var(--border-gray);
+    z-index: 1;
+}
+
+.step-item {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+}
+
+.step-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 3px solid var(--border-gray);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.step-nav-button {
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.step-nav-button:focus-visible {
+    outline: 3px solid var(--primary-blue);
+    outline-offset: 3px;
+}
+
+.step-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #718096;
+}
+
+.step-item.active .step-circle {
+    border-color: var(--btn-teal);
+    background-color: var(--btn-teal);
+    color: #ffffff;
+}
+
+.step-item.active .step-label {
+    color: var(--btn-teal);
+    font-weight: 700;
+}
+
+.step-item.completed .step-circle {
+    border-color: #28a745;
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+/* Card Wrapper */
+.form-step-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+    display: none; /* Controlled by JS */
+}
+
+.form-step-card.active {
+    display: block;
+    animation: fadeInStep 0.25s ease;
+}
+
+.step-heading {
+    color: var(--primary-blue);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #edf2f7;
+}
+
+/* Grid & Inputs */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group-row {
+    margin-bottom: 20px;
+}
+
+.form-group-row label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--btn-teal);
+    box-shadow: 0 0 0 3px rgba(19, 137, 143, 0.15);
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.file-upload-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.file-upload-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+}
+
+.file-upload-button {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #edf2f7;
+    color: var(--primary-blue);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.file-upload-button:hover,
+.file-upload-input:focus-visible + .file-upload-button {
+    background: #e2e8f0;
+}
+
+.file-upload-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding-top: 6px;
+}
+
+.radio-label, .check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.helper-text {
+    font-size: 12px;
+    color: #718096;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Navigation & Bottom Buttons */
+.step-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #edf2f7;
+}
+
+.btn-wizard {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-prev {
+    background-color: #e2e8f0;
+    color: #2d3748;
+}
+
+.btn-prev:hover {
+    background-color: #cbd5e0;
+}
+
+.btn-save-draft {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-save-draft:hover {
+    background-color: #e0a800;
+}
+
+.btn-next {
+    background-color: var(--btn-teal);
+    color: #ffffff;
+}
+
+.btn-next:hover {
+    background-color: var(--btn-teal-hover);
+}
+
+.btn-submit-final {
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 14px 40px;
+}
+
+.btn-submit-final:hover {
+    background-color: #218838;
+}
+
+@keyframes fadeInStep {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .step-progressbar::before {
+        display: none;
+    }
+    .step-label {
+        display: none;
+    }
+}

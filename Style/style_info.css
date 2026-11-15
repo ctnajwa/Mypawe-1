@@ -1,0 +1,327 @@
+
+.section-padding {
+    padding: 40px 0;
+}
+
+/* --- TOP SECTION (HANDSHAKE LEFT + RIGHT COLUMN) --- */
+.top-overview-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 28px;
+    align-items: stretch;
+    margin-top: 35px;
+}
+
+/* Left: Handshake Card */
+.handshake-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 45px 35px;
+    box-shadow: 0 8px 24px rgba(13, 27, 76, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.handshake-icon-wrap {
+    margin-bottom: 25px;
+}
+
+.handshake-icon {
+    display: block;
+    width: min(150px, 45vw);
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+
+.handshake-text {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #2d3748;
+    max-width: 440px;
+}
+
+/* Right: Overview Right Column */
+.overview-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Waktu Operasi Card */
+.overview-waktu-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 24px 28px;
+    box-shadow: 0 8px 24px rgba(13, 27, 76, 0.05);
+}
+
+.overview-waktu-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0d1b4c;
+    margin-bottom: 15px;
+}
+
+.waktu-table-wrapper {
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.waktu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    font-size: 17px;
+    color: #1a202c;
+    font-weight: 600;
+}
+
+.waktu-row:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+.waktu-day {
+    color: #1a202c;
+}
+
+.waktu-time {
+    color: #2b6cb0;
+}
+
+/* Visi & Misi Section */
+.visi-misi-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.visi-misi-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0d1b4c;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 100%;
+}
+
+.konsep-grid {
+    grid-template-columns: 1fr;
+}
+
+.vm-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 22px 20px;
+    box-shadow: 0 6px 18px rgba(13, 27, 76, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.vm-card h4 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0d1b4c;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 6px;
+}
+
+.vm-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+/* --- OBJEKTIF PENUBUHAN (BEAUTIFIED) --- */
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 15px;
+}
+
+.objective-card {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    border-top: 4px solid #0d1b4c;
+    border-radius: 14px;
+    padding: 28px 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.objective-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(13, 27, 76, 0.09);
+}
+
+.objective-badge {
+    width: 38px;
+    height: 38px;
+    background: #ffc107;
+    color: #0d1b4c;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.objective-card h4 {
+    font-size: 20px;
+    color: #0d1b4c;
+    margin-bottom: 8px;
+}
+
+.objective-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+/* --- KEMUDAHAN DI PAWE (CARD WITH IMAGE) --- */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.facility-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.facility-img-wrapper {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #edf2f7;
+}
+
+.facility-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover .facility-img-wrapper img {
+    transform: scale(1.04);
+}
+
+.facility-body {
+    padding: 22px 20px;
+    flex: 1;
+}
+
+.facility-body h3 {
+    font-size: 20px;
+    color: #0d1b4c;
+    margin-bottom: 8px;
+}
+
+.facility-body p {
+    font-size: 15px;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* --- CONTACT STRIP CARD --- */
+.contact-strip-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 35px 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.contact-strip-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contact-strip-header h3 {
+    font-size: 24px;
+    color: #0d1b4c;
+}
+
+.contact-strip-header p {
+    font-size: 16px;
+    color: #718096;
+}
+
+.contact-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.contact-strip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.cs-icon {
+    font-size: 26px;
+}
+
+.contact-strip-item h4 {
+    font-size: 17px;
+    color: #0d1b4c;
+    margin-bottom: 3px;
+}
+
+.contact-strip-item p {
+    font-size: 15px;
+    color: #4a5568;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 960px) {
+    .top-overview-container {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+
+    .handshake-card {
+        padding: 30px 20px;
+    }
+
+    .visi-misi-grid {
+        grid-template-columns: 1fr;
+    }
+}

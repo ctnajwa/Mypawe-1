@@ -1,0 +1,692 @@
+/* --- 1. BASE STYLES & ACCESSIBILITY --- */
+:root {
+    --primary-blue: #0d1b4c; /* Deep Navy */
+    --accent-yellow: #ffc107; /* Bright Yellow */
+    --bg-light: #f8f9fa; /* Off-white */
+    --text-dark: #212529; /* Dark Grey for text */
+    --text-muted: #495057;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h2, h3 {
+    color: var(--primary-blue);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. HEADER / NAVIGATION --- */
+header {
+    background-color: var(--primary-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 90px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 55px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.dropdown-toggle {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus-visible {
+    color: var(--accent-yellow);
+}
+
+.dropdown-toggle span {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 12px;
+    transition: transform 0.2s;
+}
+
+.dropdown.is-open .dropdown-toggle span {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 50%;
+    display: none;
+    min-width: 230px;
+    padding: 8px 0;
+    transform: translateX(-50%);
+    background-color: var(--primary-blue);
+    border-top: 3px solid var(--accent-yellow);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.dropdown.is-open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+    background-color: rgba(255, 193, 7, 0.15);
+}
+
+nav a:hover {
+    color: var(--accent-yellow);
+}
+
+.login-btn {
+    background-color: var(--accent-yellow);
+    color: #000 !important;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-background,
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+}
+
+.hero-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--primary-blue);
+    transition: opacity 0.35s ease;
+}
+
+.hero::before {
+    background: linear-gradient(to bottom, rgba(13,27,76,0.3), rgba(13,27,76,0.8));
+    z-index: 1;
+}
+
+.hero-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 64px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.hero-arrow:hover,
+.hero-arrow:focus-visible {
+    background-color: rgba(0, 0, 0, 0.75);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.hero-arrow-prev {
+    left: 24px;
+}
+
+.hero-arrow-next {
+    right: 24px;
+}
+
+.hero-text {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: #f0f0f0;
+    font-size: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+/* --- 4. QUICK ACTION CARD --- */
+.main-container {
+    max-width: 800px;
+    margin: -60px auto 40px;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.card-form {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    border-top: 8px solid var(--accent-yellow);
+}
+
+.card-form h2 {
+    margin-bottom: 5px;
+}
+
+.card-form p {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px;
+    font-size: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-blue);
+    background-color: #f0f8ff;
+}
+
+.submit-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    width: 100%;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #1a237e;
+}
+
+/* --- 5. ANNOUNCEMENT TICKER --- */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--accent-yellow);
+    color: #000;
+    padding: 12px 0;
+    box-sizing: content-box;
+    margin-bottom: 40px;
+}
+
+.ticker {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    animation: ticker 25s linear infinite;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ticker-group {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.ticker-item {
+    padding: 0 2rem;
+}
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* --- 6. SECTION & GRID STYLING --- */
+section {
+    padding: 40px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+}
+
+.section-title p {
+    font-size: 18px;
+}
+
+.news-section-box {
+    background-color: #fff;
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--card-shadow);
+    margin-top: 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 25px;
+}
+
+.news-date {
+    color: var(--accent-yellow);
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.news-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--primary-blue);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* --- 7. VOLUNTEER BANNER --- */
+.volunteer-section {
+    padding: 40px 0;
+}
+
+.volunteer-banner {
+    background-color: #e3f2fd;
+    border-radius: var(--radius);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-left: 10px solid var(--primary-blue);
+}
+
+.volunteer-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.volunteer-text h2 {
+    font-size: 30px;
+}
+
+.btn-volunteer {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* --- 8. CONTACT & MAP --- */
+.contact-section-wrapper {
+    padding-bottom: 60px;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.contact-info {
+    padding: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    font-size: 30px;
+    margin-right: 20px;
+    color: var(--primary-blue);
+}
+
+.contact-item h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.contact-item p {
+    font-size: 19px;
+    color: var(--text-muted);
+}
+
+.map-container {
+    min-height: 400px;
+    background-color: #ddd;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- 9. FOOTER --- */
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 16px;
+}
+
+footer a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+/* --- 10. RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        margin: 15px 0;
+        gap: 10px;
+    }
+    .login-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+    .volunteer-banner {
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-text h1 {
+        font-size: 28px;
+    }
+}
+
+/* --- USER AUTHENTICATION & DROPDOWN STYLING --- */
+.header-auth-area {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu-dropdown {
+    position: relative;
+}
+
+.user-menu-toggle {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.user-menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.welcome-text {
+    font-weight: 400;
+    color: #cbd5e0;
+}
+
+.user-display-name {
+    font-weight: 700;
+    color: #ffffff;
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.caret {
+    font-size: 12px;
+    color: #ffc107;
+    transition: transform 0.2s ease;
+}
+
+.user-menu-dropdown.is-open .caret {
+    transform: rotate(180deg);
+}
+
+/* User Menu Popup Box */
+.user-menu-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    background-color: #ffffff;
+    min-width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    padding: 8px 0;
+    z-index: 1100;
+    border: 1px solid #e2e8f0;
+}
+
+.user-menu-dropdown.is-open .user-menu-list {
+    display: block;
+    animation: fadeInDropdown 0.2s ease;
+}
+
+.user-menu-list li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    color: #2d3748;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.user-menu-list li a:hover {
+    background-color: #f7fafc;
+    color: #0d1b4c;
+}
+
+.menu-icon {
+    font-size: 16px;
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 6px 0;
+}
+
+.user-menu-list li a.menu-logout {
+    color: #e53e3e;
+}
+
+.user-menu-list li a.menu-logout:hover {
+    background-color: #fff5f5;
+    color: #c53030;
+}
+
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

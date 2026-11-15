@@ -1,0 +1,184 @@
+
+.brand-logo-placeholder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo-placeholder img {
+    width: 120px;
+    max-width: 120px;
+    max-height: 110px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.action-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #026aa7;
+}
+
+.btn-cari {
+    background-color: #0d1b4c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cari:hover {
+    background-color: #1a237e;
+}
+
+.btn-reset {
+    background-color: #e2e8f0;
+    color: #2d3748;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-reset:hover {
+    background-color: #cbd5e0;
+}
+
+.btn-tambah-staf {
+    background-color: #026aa7;
+    color: #ffffff;
+    padding: 10px 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-tambah-staf:hover {
+    background-color: #014c78;
+}
+
+.staff-table-wrapper {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.member-table th {
+    background-color: #0d1b4c;
+    color: #ffffff;
+    padding: 14px 18px;
+    font-size: 15px;
+}
+
+.member-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 15px;
+    color: #2d3748;
+}
+
+.member-table tr:last-child td {
+    border-bottom: none;
+}
+
+.member-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.link-member {
+    color: #026aa7;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-member:hover {
+    text-decoration: underline;
+    color: #014c78;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.role-badge.staf {
+    background-color: #e3f2fd;
+    color: #026aa7;
+}
+
+.role-badge.admin {
+    background-color: #fff3e0;
+    color: #d97706;
+}
+
+.empty-state {
+    text-align: center;
+    color: #718096;
+    padding: 40px !important;
+}
+
+.alert-box {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 20px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
