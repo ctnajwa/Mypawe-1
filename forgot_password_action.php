@@ -16,6 +16,18 @@ if ($conn->connect_error) {
 
 $action = $_REQUEST['action'] ?? '';
 
+if ($action === 'back_to_username' && ($_SESSION['forgot_step'] ?? 1) === 2) {
+    unset(
+        $_SESSION['forgot_code'],
+        $_SESSION['forgot_user_id'],
+        $_SESSION['forgot_email'],
+        $_SESSION['forgot_masked_email']
+    );
+    $_SESSION['forgot_step'] = 1;
+    header("Location: forgot_password.php");
+    exit();
+}
+
 // Helper function to mask email for UI display (e.g. ahmad@gmail.com -> ah***@gmail.com)
 function maskEmail($email) {
     $parts = explode('@', $email);

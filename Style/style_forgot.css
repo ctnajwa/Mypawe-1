@@ -156,6 +156,15 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.step-indicators a.indicator-bar {
+    display: block;
+}
+
+.step-indicators a.indicator-bar:hover,
+.step-indicators a.indicator-bar:focus-visible {
+    background-color: var(--btn-blue-hover);
+}
+
 .indicator-bar.active {
     background-color: var(--btn-blue);
 }

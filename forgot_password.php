@@ -116,7 +116,11 @@ $username_val = $_SESSION['forgot_username'] ?? '';
 
         <!-- Progress Indicator Bars matching screenshots -->
         <div class="step-indicators">
-            <div class="indicator-bar <?php echo ($step === 1) ? 'active' : ''; ?>"></div>
+            <?php if ($step === 2): ?>
+                <a href="forgot_password_action.php?action=back_to_username" class="indicator-bar active" aria-label="Kembali ke langkah masukkan ID Pengguna" title="Kembali ke langkah masukkan ID Pengguna"></a>
+            <?php else: ?>
+                <div class="indicator-bar <?php echo ($step === 1) ? 'active' : ''; ?>"></div>
+            <?php endif; ?>
             <div class="indicator-bar <?php echo ($step === 2) ? 'active' : ''; ?>"></div>
             <div class="indicator-bar <?php echo ($step === 3) ? 'active' : ''; ?>"></div>
             <div class="indicator-bar <?php echo ($step === 4) ? 'active' : ''; ?>"></div>
